@@ -1,0 +1,98 @@
+html{
+    font-size: 10px;
+}
+
+body{
+    background-image: url(../images/background.png);
+    background-position: center;
+}
+
+.container{
+    position: relative;
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.title{
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    opacity: 0;
+    font-size: 7rem;
+    font-weight: bold;
+    color:#0FC0FC;
+    animation: colorTitle 4s linear 1 forwards;
+}
+
+@keyframes colorTitle {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.header {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    .header__title{
+        font-size: 5rem;
+        font-weight: bold;
+        color: #0FC0FC;
+    }
+    .header__list{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 4rem;
+        font-size: 3rem;
+        color:red;
+        .list__item {
+            margin: 1rem;
+            padding: 1.7rem 2rem;
+            border: 1px solid red;
+            border-radius: 1rem;
+            cursor: pointer;
+            &:hover {
+                color: #00FF00;
+                border-color: #00FF00;
+            }
+        }
+        .list__item--active,
+        .header__button--active {
+            color: #00FF00;
+            border-color: #00FF00;
+            box-shadow: 0 0 1rem .1rem #00FF00;
+        }
+    }
+    .header__button{
+        font-size: 3rem;
+        padding: 1.7rem 2rem;
+        background-color: transparent;
+        border: 1px solid red;
+        border-radius: 1rem;
+        color: red;
+    }
+    .header__button--active {
+        color: #00FF00;
+        border-color: #00FF00;
+        box-shadow: 0 0 1rem .1rem #00FF00;
+    }
+}

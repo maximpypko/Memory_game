@@ -6,28 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="styles/style.css">
-    <script async src="scripts/index.js"></script>
+    <script defer src="scripts/index.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1>Memory game</h1>
-        <header class="nav">
-            <h1 class="nav__title">Выберите размер поля</h1>
-            <form class="form">
-                <select class="size" size="4">
-                    <option class="size__item">2*3</option>
-                    <option class="size__item">3*4</option>
-                    <option class="size__item">4*5</option>
-                    <option class="size__item">5*6</option>
-                    <option class="size__item">6*7</option>
-                    <option class="size__item">7*8</option>
-                    <option class="size__item">8*9</option>
-                    <option class="size__item">9*10</option>
-                </select>
-                <button class="button">Поехали</button>
-            </form>
+        <h1 class="title">Memory game</h1>
+        <header class="header">
+            <h2 class="header__title">
+                Выберите размер поля:</h2>
+            <ul class="header__list">
+                <li class="list__item">2*3</li>
+                <li class="list__item">3*4</li>
+                <li class="list__item">4*5</li>
+                <li class="list__item">5*6</li>
+                <li class="list__item">6*7</li>
+                <li class="list__item">7*8</li>
+                <li class="list__item">8*9</li>
+                <li class="list__item">9*10</li>
+            </ul>
+            <button type="button" class="header__button">Поехали</button>
         </header>
         <main class="content"></main>
         <footer class="contacts"></footer>
