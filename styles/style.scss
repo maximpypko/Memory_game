@@ -1,3 +1,6 @@
+@import "../partial/variables";
+@import "../partial/mixins";
+
 html{
     font-size: 10px;
 }
@@ -20,10 +23,12 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
     text-transform: uppercase;
     opacity: 0;
     font-size: 7rem;
     font-weight: bold;
+    letter-spacing: 1rem;
     color:#0FC0FC;
     animation: colorTitle 4s linear 1 forwards;
 }
@@ -55,44 +60,70 @@ body{
     .header__title{
         font-size: 5rem;
         font-weight: bold;
+        letter-spacing: 1rem;
+        text-transform: uppercase;
         color: #0FC0FC;
+        animation: opacityTitle 3s linear infinite forwards;
     }
     .header__list{
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
         margin: 4rem;
-        font-size: 3rem;
-        color:red;
+        font-weight: bold;
         .list__item {
             margin: 1rem;
             padding: 1.7rem 2rem;
-            border: 1px solid red;
-            border-radius: 1rem;
-            cursor: pointer;
+            @include headerItem;
             &:hover {
-                color: #00FF00;
-                border-color: #00FF00;
+                color: $headerActiveColor;
+                border-color: $headerActiveColor;
             }
         }
-        .list__item--active,
-        .header__button--active {
-            color: #00FF00;
-            border-color: #00FF00;
-            box-shadow: 0 0 1rem .1rem #00FF00;
+        .list__item--active{
+            color: $headerActiveColor;
+            border-color: $headerActiveColor;
+            box-shadow: 0 0 1rem .1rem $headerActiveColor;
         }
     }
     .header__button{
-        font-size: 3rem;
         padding: 1.7rem 2rem;
-        background-color: transparent;
-        border: 1px solid red;
-        border-radius: 1rem;
-        color: red;
+        @include headerItem;
     }
     .header__button--active {
-        color: #00FF00;
-        border-color: #00FF00;
-        box-shadow: 0 0 1rem .1rem #00FF00;
+        color: $headerActiveColor;
+        border-color: $headerActiveColor;
+        box-shadow: 0 0 1rem .1rem $headerActiveColor;
+        transition: .2s ease-in-out;
+        &:hover {
+            box-shadow: 0 0 1.2rem .2rem $headerActiveColor;
+        }
+    }
+}
+
+@keyframes opacityTitle {
+    0%{
+        opacity: .5;
+        color: yellow;
+    }
+    50%{
+        opacity: 1;
+        color: rgb(19, 202, 248);
+    }
+    100%{
+        opacity: 0.5;
+        color: yellow;
+    }
+}
+///////////~~~~SMALL SCREEN~~~~~////////////
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    html{
+        font-size: 8px;
+    }
+}
+///////////~~~~X-SMALL SCREEN~~~~~////////////
+@media screen and (max-width: 575px) {
+    html{
+        font-size: 7px;
     }
 }

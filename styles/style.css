@@ -23,10 +23,12 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  text-align: center;
   text-transform: uppercase;
   opacity: 0;
   font-size: 7rem;
   font-weight: bold;
+  letter-spacing: 1rem;
   color: #0FC0FC;
   -webkit-animation: colorTitle 4s linear 1 forwards;
           animation: colorTitle 4s linear 1 forwards;
@@ -83,7 +85,11 @@ body {
 .header .header__title {
   font-size: 5rem;
   font-weight: bold;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
   color: #0FC0FC;
+  -webkit-animation: opacityTitle 3s linear infinite forwards;
+          animation: opacityTitle 3s linear infinite forwards;
 }
 
 .header .header__list {
@@ -95,16 +101,21 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 4rem;
-  font-size: 3rem;
-  color: red;
+  font-weight: bold;
 }
 
 .header .header__list .list__item {
   margin: 1rem;
   padding: 1.7rem 2rem;
+  font-size: 3rem;
+  text-transform: uppercase;
   border: 1px solid red;
   border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: red;
   cursor: pointer;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .header .header__list .list__item:hover {
@@ -112,105 +123,79 @@ body {
   border-color: #00FF00;
 }
 
-.header .header__list .list__item--active,
-.header .header__list .header__button--active {
+.header .header__list .list__item--active {
   color: #00FF00;
   border-color: #00FF00;
-  -webkit-box-shadow: 0 0 1rem .1rem #00FF00;
-          box-shadow: 0 0 1rem .1rem #00FF00;
+  -webkit-box-shadow: 0 0 1rem 0.1rem #00FF00;
+          box-shadow: 0 0 1rem 0.1rem #00FF00;
 }
 
 .header .header__button {
-  font-size: 3rem;
   padding: 1.7rem 2rem;
-  background-color: transparent;
+  font-size: 3rem;
+  text-transform: uppercase;
   border: 1px solid red;
   border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
   color: red;
+  cursor: pointer;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .header .header__button--active {
   color: #00FF00;
   border-color: #00FF00;
-  -webkit-box-shadow: 0 0 1rem .1rem #00FF00;
-          box-shadow: 0 0 1rem .1rem #00FF00;
+  -webkit-box-shadow: 0 0 1rem 0.1rem #00FF00;
+          box-shadow: 0 0 1rem 0.1rem #00FF00;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
-@-webkit-keyframes arrowDown {
+.header .header__button--active:hover {
+  -webkit-box-shadow: 0 0 1.2rem 0.2rem #00FF00;
+          box-shadow: 0 0 1.2rem 0.2rem #00FF00;
+}
+
+@-webkit-keyframes opacityTitle {
   0% {
-    -webkit-transform: translateY(-30%);
-            transform: translateY(-30%);
+    opacity: .5;
+    color: yellow;
   }
-  10% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  15% {
-    -webkit-transform: translateY(-9%);
-            transform: translateY(-9%);
-  }
-  20% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  25% {
-    -webkit-transform: translateY(-5%);
-            transform: translateY(-5%);
-  }
-  30% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  35% {
-    -webkit-transform: translateY(-5%);
-            transform: translateY(-5%);
-  }
-  40% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+  50% {
+    opacity: 1;
+    color: #13caf8;
   }
   100% {
-    -webkit-transform: translateY(-30%);
-            transform: translateY(-30%);
+    opacity: 0.5;
+    color: yellow;
   }
 }
 
-@keyframes arrowDown {
+@keyframes opacityTitle {
   0% {
-    -webkit-transform: translateY(-30%);
-            transform: translateY(-30%);
+    opacity: .5;
+    color: yellow;
   }
-  10% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  15% {
-    -webkit-transform: translateY(-9%);
-            transform: translateY(-9%);
-  }
-  20% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  25% {
-    -webkit-transform: translateY(-5%);
-            transform: translateY(-5%);
-  }
-  30% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  35% {
-    -webkit-transform: translateY(-5%);
-            transform: translateY(-5%);
-  }
-  40% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+  50% {
+    opacity: 1;
+    color: #13caf8;
   }
   100% {
-    -webkit-transform: translateY(-30%);
-            transform: translateY(-30%);
+    opacity: 0.5;
+    color: yellow;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  html {
+    font-size: 7px;
   }
 }
 /*# sourceMappingURL=style.css.map */

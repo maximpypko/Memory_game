@@ -1,0 +1,10 @@
+@mixin headerItem {
+    font-size: 3rem;
+    text-transform: uppercase;
+    border: 1px solid $headerColor;
+    border-radius: 1rem;
+    background-color:$headerBackgroundColor;
+    color:$headerColor;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
