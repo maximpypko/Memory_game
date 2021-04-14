@@ -5,6 +5,11 @@
     border-radius: 1rem;
     background-color:$headerBackgroundColor;
     color:$headerColor;
-    cursor: pointer;
     transition: .2s ease-in-out;
+}
+
+@mixin activeItem {
+    color: $headerActiveColor;
+    border-color: $headerActiveColor;
+    box-shadow: 0 0 1rem .1rem $headerActiveColor;
 }

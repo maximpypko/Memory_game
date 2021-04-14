@@ -30,8 +30,8 @@ body {
   font-weight: bold;
   letter-spacing: 1rem;
   color: #0FC0FC;
-  -webkit-animation: colorTitle 4s linear 1 forwards;
-          animation: colorTitle 4s linear 1 forwards;
+  -webkit-animation: colorTitle 3s linear 1 forwards;
+          animation: colorTitle 3s linear 1 forwards;
 }
 
 @-webkit-keyframes colorTitle {
@@ -88,8 +88,8 @@ body {
   letter-spacing: 1rem;
   text-transform: uppercase;
   color: #0FC0FC;
-  -webkit-animation: opacityTitle 3s linear infinite forwards;
-          animation: opacityTitle 3s linear infinite forwards;
+  -webkit-animation: opacityHeaderTitle 3s linear infinite forwards;
+          animation: opacityHeaderTitle 3s linear infinite forwards;
 }
 
 .header .header__list {
@@ -107,13 +107,13 @@ body {
 .header .header__list .list__item {
   margin: 1rem;
   padding: 1.7rem 2rem;
+  cursor: pointer;
   font-size: 3rem;
   text-transform: uppercase;
   border: 1px solid red;
   border-radius: 1rem;
   background-color: rgba(0, 0, 0, 0.5);
   color: red;
-  cursor: pointer;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }
@@ -138,18 +138,18 @@ body {
   border-radius: 1rem;
   background-color: rgba(0, 0, 0, 0.5);
   color: red;
-  cursor: pointer;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }
 
 .header .header__button--active {
+  cursor: pointer;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
   color: #00FF00;
   border-color: #00FF00;
   -webkit-box-shadow: 0 0 1rem 0.1rem #00FF00;
           box-shadow: 0 0 1rem 0.1rem #00FF00;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
 }
 
 .header .header__button--active:hover {
@@ -157,7 +157,7 @@ body {
           box-shadow: 0 0 1.2rem 0.2rem #00FF00;
 }
 
-@-webkit-keyframes opacityTitle {
+@-webkit-keyframes opacityHeaderTitle {
   0% {
     opacity: .5;
     color: yellow;
@@ -172,7 +172,7 @@ body {
   }
 }
 
-@keyframes opacityTitle {
+@keyframes opacityHeaderTitle {
   0% {
     opacity: .5;
     color: yellow;
@@ -185,6 +185,44 @@ body {
     opacity: 0.5;
     color: yellow;
   }
+}
+
+.content {
+  width: 100%;
+  height: 95%;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.cards__list {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cards__item {
+  display: block;
+  border: -5px solid transparent;
+  background-image: url(../images/card__background.jpg);
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+.cards__item:hover {
+  opacity: .7;
 }
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
