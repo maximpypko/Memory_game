@@ -82,7 +82,8 @@ class Game {
         $content.style.display = 'block'
         $content.append($cards__list)
 
-        this.disposeIcons()
+        this.disposeIcons();
+        this.reverseCard();
     }
 
     disposeIcons() {
@@ -93,10 +94,16 @@ class Game {
         function qwerty(icons, randomA , count = 0, count2 = 0) {
 
             arrCard[randomA[count2]].insertAdjacentHTML('afterbegin',
-                `<img src = '${icons[count]}' alt = 'card icon' class = 'card__item--icon'>`
+                `<div class = 'card__front'></div>
+                <div class = 'card__back'>
+                    <img src = '${icons[count]}' alt = 'card icon'>
+                </div>`
             )
             arrCard[randomA[++count2]].insertAdjacentHTML('afterbegin',
-                `<img src = '${icons[count]}' alt = 'card icon' class = 'card__item--icon'>`
+                `<div class = 'card__front'></div>
+                <div class = 'card__back'>
+                    <img src = '${icons[count]}' alt = 'card icon'>
+                </div>`
             )
             
             count++;
@@ -128,6 +135,25 @@ class Game {
         }
         return randomArray;
     }
-}
 
+    reverseCard() {
+        const $cardsContainer = document.querySelector('.cards__list');
+
+        $cardsContainer.addEventListener('click', e => {
+                
+            if (e.target.closest('.card__front')) {
+                e.target.style.transform = 'rotateY(180deg)'
+                e.target.nextElementSibling.style.transform = 'rotateY(360deg)'
+
+                setTimeout(this.hideIcon, 1000, e.target)
+            }
+
+        })
+    }
+
+    hideIcon(target) {
+        target.style.transform = 'rotateY(0deg)';
+        target.nextElementSibling.style.transform = 'rotateY(180deg)'
+    }
+}
 new Game();

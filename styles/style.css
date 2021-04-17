@@ -212,30 +212,57 @@ body {
 }
 
 .content .cards__list .cards__item {
+  position: relative;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.content .cards__list .cards__item .card__front,
+.content .cards__list .cards__item .card__back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: radial-gradient(circle, #787a7c, #889498, #98b0ad, #b2cbba, #dae3c4);
-  background-position: center center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: -webkit-transform .2s linear,  -webkit-box-shadow .1s linear;
+  transition: -webkit-transform .2s linear,  -webkit-box-shadow .1s linear;
+  transition: transform .2s linear,  box-shadow .1s linear;
+  transition: transform .2s linear,  box-shadow .1s linear,  -webkit-transform .2s linear,  -webkit-box-shadow .1s linear;
   cursor: pointer;
-  -webkit-transition: .1s ease-in-out;
-  transition: .1s ease-in-out;
+  border: 1px solid transparent;
+  border-radius: 1rem;
 }
 
-.content .cards__list .cards__item:hover {
-  -webkit-box-shadow: 0px 0px 7px 3px white;
-          box-shadow: 0px 0px 7px 3px white;
+.content .cards__list .cards__item .card__front:hover,
+.content .cards__list .cards__item .card__back:hover {
+  border: 1px solid orangered;
+  -webkit-box-shadow: inset 0 0 .5rem 1px orangered;
+          box-shadow: inset 0 0 .5rem 1px orangered;
 }
 
-.content .cards__list .cards__item .card__item--icon {
-  display: block;
+.content .cards__list .cards__item .card__front {
+  background-image: radial-gradient(circle, #787a7c, #889498, #98b0ad, #b2cbba, #dae3c4);
+}
+
+.content .cards__list .cards__item .card__back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.content .cards__list .cards__item .card__back .card__back img {
   max-width: 60%;
+  height: auto;
 }
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
